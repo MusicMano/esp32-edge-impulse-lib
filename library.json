@@ -1,0 +1,18 @@
+{
+  "name": "ESP32 Edge Impulse Lib",
+  "version": "1.0.0",
+  "description": "Edge Impulse inference library for ESP32 ESPHome integration",
+  "keywords": ["esp32", "edge-impulse", "machine-learning", "esphome"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MusicMano/esp32-edge-impulse-lib.git"
+  },
+  "authors": [{"name": "MusicMano", "email": "dathompson1@gmail.com"}],
+  "license": "Apache-2.0",
+  "frameworks": ["arduino", "espidf"],
+  "platforms": ["espressif32"],
+  "build": {
+    "includeDir": "src",
+    "srcDir": "src"
+  }
+}
