@@ -50,7 +50,7 @@
 #include "edge-impulse-sdk/classifier/postprocessing/ei_object_counting.h"
 #endif
 
-extern "C" EI_IMPULSE_ERROR init_postprocessing(ei_impulse_handle_t *handle) {
+extern "C" inline EI_IMPULSE_ERROR init_postprocessing(ei_impulse_handle_t *handle) {
     if (!handle) {
         return EI_IMPULSE_OUT_OF_MEMORY;
     }
@@ -68,7 +68,7 @@ extern "C" EI_IMPULSE_ERROR init_postprocessing(ei_impulse_handle_t *handle) {
     return EI_IMPULSE_OK;
 }
 
-extern "C" EI_IMPULSE_ERROR deinit_postprocessing(ei_impulse_handle_t *handle) {
+extern "C" inline EI_IMPULSE_ERROR deinit_postprocessing(ei_impulse_handle_t *handle) {
     if (!handle) {
         return EI_IMPULSE_OUT_OF_MEMORY;
     }
@@ -91,7 +91,7 @@ extern "C" EI_IMPULSE_ERROR deinit_postprocessing(ei_impulse_handle_t *handle) {
     return EI_IMPULSE_OK;
 }
 
-extern "C" EI_IMPULSE_ERROR run_postprocessing(ei_impulse_handle_t *handle,
+extern "C" inline EI_IMPULSE_ERROR run_postprocessing(ei_impulse_handle_t *handle,
                                                ei_impulse_result_t *result) {
     if (!handle) {
         return EI_IMPULSE_OUT_OF_MEMORY;
@@ -116,7 +116,7 @@ extern "C" EI_IMPULSE_ERROR run_postprocessing(ei_impulse_handle_t *handle,
     return EI_IMPULSE_OK;
 }
 
-extern "C" EI_IMPULSE_ERROR display_postprocessing(ei_impulse_handle_t *handle,
+extern "C" inline EI_IMPULSE_ERROR display_postprocessing(ei_impulse_handle_t *handle,
                                                    ei_impulse_result_t *result) {
     if (!handle) {
         return EI_IMPULSE_OUT_OF_MEMORY;

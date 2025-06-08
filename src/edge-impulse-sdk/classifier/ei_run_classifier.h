@@ -670,7 +670,7 @@ static const float torch_std[] = { 0.229, 0.224, 0.225 };
 // This is ordered BGR
 static const float tao_mean[] = { 103.939, 116.779, 123.68 };
 
-EI_IMPULSE_ERROR ei_scale_fmatrix(ei_learning_block_t *block, ei::matrix_t *fmatrix) {
+inline EI_IMPULSE_ERROR ei_scale_fmatrix(ei_learning_block_t *block, ei::matrix_t *fmatrix) {
     if (block->image_scaling == EI_CLASSIFIER_IMAGE_SCALING_TORCH) {
         // @todo; could we write some faster vector math here?
         for (size_t ix = 0; ix < fmatrix->rows * fmatrix->cols; ix += 3) {
@@ -728,7 +728,7 @@ EI_IMPULSE_ERROR ei_scale_fmatrix(ei_learning_block_t *block, ei::matrix_t *fmat
     return EI_IMPULSE_OK;
 }
 
-EI_IMPULSE_ERROR ei_unscale_fmatrix(ei_learning_block_t *block, ei::matrix_t *fmatrix) {
+inline EI_IMPULSE_ERROR ei_unscale_fmatrix(ei_learning_block_t *block, ei::matrix_t *fmatrix) {
     if (block->image_scaling == EI_CLASSIFIER_IMAGE_SCALING_TORCH) {
         // @todo; could we write some faster vector math here?
         for (size_t ix = 0; ix < fmatrix->rows * fmatrix->cols; ix += 3) {
